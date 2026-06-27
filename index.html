@@ -1,54 +1,237 @@
- <!DOCTYPE html>
- <html lang="en">
- <head>
--  <!-- Step 2 will add the JSON-LD schema block here. Don't touch yet. -->
-+  <!-- ============================================
-+       JSON-LD LocalBusiness Schema
-+       This is what makes Google show the clinic info
-+       (address, phone, hours) under the website URL
-+       in search results. To use for a different clinic,
-+       swap the values below.
-+       ============================================ -->
-+  <script type="application/ld+json">
-+  {
-+    "@context": "https://schema.org",
-+    "@type": "Dentist",
-+    "name": "Smilead Dental Care",
-+    "image": "https://yourdomain.com/clinic-photo.jpg",
-+    "url": "https://yourusername.github.io/smilead-dental",
-+    "telephone": "+91 85005 05789",
-+    "priceRange": "₹₹",
-+    "address": {
-+      "@type": "PostalAddress",
-+      "streetAddress": "Mehdipatnam / Nizampet",
-+      "addressLocality": "Hyderabad",
-+      "addressRegion": "Telangana",
-+      "postalCode": "500028",
-+      "addressCountry": "IN"
-+    },
-+    "geo": {
-+      "@type": "GeoCoordinates",
-+      "latitude": "17.3950",
-+      "longitude": "78.4313"
-+    },
-+    "openingHoursSpecification": [
-+      {
-+        "@type": "OpeningHoursSpecification",
-+        "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],
-+        "opens": "09:30",
-+        "closes": "20:00"
-+      }
-+    ],
-+    "sameAs": [
-+      "https://www.google.com/maps/search/?api=1&query=Smilead+Dental+Care+Mehdipatnam"
-+    ],
-+    "aggregateRating": {
-+      "@type": "AggregateRating",
-+      "ratingValue": "4.7",
-+      "reviewCount": "12"
-+    }
-+  }
-+  </script>
-   <title>Smilead Dental Care | Best Dentist in Mehdipatnam / Nizampet, Hyderabad</title>
-   <meta name="description" content="Smilead Dental Care - Dr. Syed Asimuddin offering dental implants, root canal, teeth whitening, smile design and family dentistry in Mehdipatnam / Nizampet, Hyderabad. Book on WhatsApp.">
-   <meta name="viewport" content="width=device-width, initial-scale=1">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- ============================================
+       JSON-LD LocalBusiness Schema
+       This is what makes Google show the clinic info
+       (address, phone, hours) under the website URL
+       in search results. To use for a different clinic,
+       swap the values below.
+       ============================================ -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Dentist",
+    "name": "Smilead Dental Care",
+    "image": "https://yourdomain.com/clinic-photo.jpg",
+    "url": "https://yourusername.github.io/smilead-dental",
+    "telephone": "+91 85005 05789",
+    "priceRange": "₹₹",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Mehdipatnam / Nizampet",
+      "addressLocality": "Hyderabad",
+      "addressRegion": "Telangana",
+      "postalCode": "500028",
+      "addressCountry": "IN"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": "17.3950",
+      "longitude": "78.4313"
+    },
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],
+        "opens": "09:30",
+        "closes": "20:00"
+      }
+    ],
+    "sameAs": [
+      "https://www.google.com/maps/search/?api=1&query=Smilead+Dental+Care+Mehdipatnam"
+    ],
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.7",
+      "reviewCount": "12"
+    }
+  }
+  </script>
+  <title>Smilead Dental Care | Best Dentist in Mehdipatnam / Nizampet, Hyderabad</title>
+  <meta name="description" content="Smilead Dental Care - Dr. Syed Asimuddin offering dental implants, root canal, teeth whitening, smile design and family dentistry in Mehdipatnam / Nizampet, Hyderabad. Book on WhatsApp.">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    /* Simple, mobile-first styling. Resets + 2 sections. */
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      color: #1f2937; line-height: 1.6; background: #fff;
+    }
+    a { color: inherit; text-decoration: none; }
+
+    /* WhatsApp floating button */
+    .wa-fab {
+      position: fixed; bottom: 20px; right: 20px; z-index: 999;
+      background: #25D366; color: #fff; padding: 14px 22px;
+      border-radius: 50px; font-weight: 600; box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      cursor: pointer;
+    }
+    .wa-fab:hover { background: #1ebe5d; }
+
+    /* Hero */
+    header {
+      background: linear-gradient(135deg, #2563eb 0%, #1e40af 100%);
+      color: #fff; padding: 60px 20px; text-align: center;
+    }
+    header h1 { font-size: 28px; margin-bottom: 10px; }
+    header p { font-size: 18px; opacity: 0.95; }
+    header .cta {
+      display: inline-block; margin-top: 20px;
+      background: #fff; color: #2563eb; padding: 12px 28px;
+      border-radius: 6px; font-weight: 600;
+    }
+
+    /* Sections */
+    section {
+      max-width: 800px; margin: 0 auto; padding: 50px 20px;
+    }
+    section h2 {
+      font-size: 24px; margin-bottom: 20px; color: #1e40af;
+    }
+    .services {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px; margin-top: 20px;
+    }
+    .service-card {
+      background: #f9fafb; padding: 20px; border-radius: 8px;
+      border-left: 4px solid #2563eb;
+    }
+    .service-card h3 { font-size: 17px; margin-bottom: 6px; }
+    .service-card p { font-size: 14px; color: #4b5563; }
+
+    /* Contact */
+    .contact-box {
+      background: #f3f4f6; padding: 25px; border-radius: 8px;
+      margin-top: 20px;
+    }
+    .contact-box p { margin-bottom: 8px; }
+    .contact-box strong { color: #1e40af; }
+
+    footer {
+      background: #1f2937; color: #d1d5db; text-align: center;
+      padding: 30px 20px; font-size: 14px;
+    }
+
+    /* Reviews Styling */
+    .reviews-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 20px; margin-top: 20px;
+    }
+    .review-card {
+      background: #fff; border: 1px solid #e5e7eb;
+      padding: 20px; border-radius: 8px;
+    }
+    .review-stars { color: #fbbf24; font-size: 18px; margin-bottom: 8px; }
+    .review-author { font-weight: 600; margin-top: 10px; color: #1e40af; }
+
+    @media (max-width: 600px) {
+      header h1 { font-size: 22px; }
+      header p { font-size: 16px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ========== WhatsApp Floating Button ========== -->
+<a class="wa-fab"
+   href="https://wa.me/918500505789?text=Hi%20Dr.%20Asimuddin%2C%20I%20want%20to%20book%20an%20appointment%20at%20Smilead%20Dental."
+   target="_blank" rel="noopener">
+  💬 Book on WhatsApp
+</a>
+
+<!-- ========== Hero / Header ========== -->
+<header>
+  <h1>Smilead Dental Care</h1>
+  <p>Dr. Syed Asimuddin · Mehdipatnam / Nizampet, Hyderabad</p>
+  <a class="cta" href="tel:+918500505789">📞 Call Now: +91 85005 05789</a>
+</header>
+
+<!-- ========== About / Why Us ========== -->
+<section>
+  <h2>Why Smilead Dental?</h2>
+  <p>Smilead Dental Care provides comprehensive dental treatments in a clean, modern
+   environment. We focus on pain-free procedures, sterilization, and personal attention
+   for every patient — whether you need a routine check-up or a complete smile makeover.</p>
+</section>
+
+<!-- ========== Services ========== -->
+<section style="background: #fafafa;">
+  <h2>Our Services</h2>
+  <div class="services">
+    <div class="service-card">
+      <h3>🦷 Dental Implants</h3>
+      <p>Permanent tooth replacement with German implants.</p>
+    </div>
+    <div class="service-card">
+      <h3>🔧 Root Canal Treatment</h3>
+      <p>Single-visit painless RCT using rotary endodontics.</p>
+    </div>
+    <div class="service-card">
+      <h3>✨ Teeth Whitening</h3>
+      <p>Laser whitening for a brighter smile in 1 hour.</p>
+    </div>
+    <div class="service-card">
+      <h3>😁 Smile Design</h3>
+      <p>Custom smile makeovers with veneers and crowns.</p>
+    </div>
+    <div class="service-card">
+      <h3>🦷 Braces & Aligners</h3>
+      <p>Metal, ceramic, and clear aligner orthodontics.</p>
+    </div>
+    <div class="service-card">
+      <h3>👶 Kids Dentistry</h3>
+      <p>Friendly pediatric dental care for children.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ========== Reviews ========== -->
+<section>
+  <h2>What Our Patients Say ⭐</h2>
+  <div class="reviews-container">
+    <div class="review-card">
+      <div class="review-stars">★★★★★</div>
+      <p>"Pain-free root canal done in one sitting. Very professional."</p>
+      <div class="review-author">— Rahul K.</div>
+    </div>
+    <div class="review-card">
+      <div class="review-stars">★★★★★</div>
+      <p>"Best dental clinic in Mehdipatnam. Clean and friendly staff."</p>
+      <div class="review-author">— Priya M.</div>
+    </div>
+    <div class="review-card">
+      <div class="review-stars">★★★★☆</div>
+      <p>"Got my implants done here. Doctor explained everything clearly."</p>
+      <div class="review-author">— Imran S.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== Contact ========== -->
+<section style="background: #fafafa;">
+  <h2>Book Your Appointment</h2>
+  <div class="contact-box">
+    <p><strong>📍 Address:</strong> Mehdipatnam / Nizampet, Hyderabad</p>
+    <p><strong>📞 Phone:</strong> +91 85005 05789</p>
+    <p><strong>🕒 Hours:</strong> Mon-Sat, 9:30 AM – 8:00 PM</p>
+    <p><strong>💬 WhatsApp:</strong> Tap the green button below to book directly.</p>
+  </div>
+  <a class="cta"
+     href="https://wa.me/918500505789?text=Hi%20Dr.%20Asimuddin%2C%20I%20want%20to%20book%20an%20appointment%20at%20Smilead%20Dental."
+     target="_blank" rel="noopener"
+     style="display:inline-block; margin-top:20px; background:#25D366; color:#fff; padding:14px 28px; border-radius:6px; font-weight:600;">
+  💬 Book on WhatsApp
+  </a>
+</section>
+
+<!-- ========== Footer ========== -->
+<footer>
+  <p>© 2026 Smilead Dental Care · Designed by Siddhartha (Local Agency)</p>
+</footer>
+
+</body>
+</html>
