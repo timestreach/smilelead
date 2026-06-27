@@ -1,0 +1,54 @@
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+-  <!-- Step 2 will add the JSON-LD schema block here. Don't touch yet. -->
++  <!-- ============================================
++       JSON-LD LocalBusiness Schema
++       This is what makes Google show the clinic info
++       (address, phone, hours) under the website URL
++       in search results. To use for a different clinic,
++       swap the values below.
++       ============================================ -->
++  <script type="application/ld+json">
++  {
++    "@context": "https://schema.org",
++    "@type": "Dentist",
++    "name": "Smilead Dental Care",
++    "image": "https://yourdomain.com/clinic-photo.jpg",
++    "url": "https://yourusername.github.io/smilead-dental",
++    "telephone": "+91 85005 05789",
++    "priceRange": "₹₹",
++    "address": {
++      "@type": "PostalAddress",
++      "streetAddress": "Mehdipatnam / Nizampet",
++      "addressLocality": "Hyderabad",
++      "addressRegion": "Telangana",
++      "postalCode": "500028",
++      "addressCountry": "IN"
++    },
++    "geo": {
++      "@type": "GeoCoordinates",
++      "latitude": "17.3950",
++      "longitude": "78.4313"
++    },
++    "openingHoursSpecification": [
++      {
++        "@type": "OpeningHoursSpecification",
++        "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],
++        "opens": "09:30",
++        "closes": "20:00"
++      }
++    ],
++    "sameAs": [
++      "https://www.google.com/maps/search/?api=1&query=Smilead+Dental+Care+Mehdipatnam"
++    ],
++    "aggregateRating": {
++      "@type": "AggregateRating",
++      "ratingValue": "4.7",
++      "reviewCount": "12"
++    }
++  }
++  </script>
+   <title>Smilead Dental Care | Best Dentist in Mehdipatnam / Nizampet, Hyderabad</title>
+   <meta name="description" content="Smilead Dental Care - Dr. Syed Asimuddin offering dental implants, root canal, teeth whitening, smile design and family dentistry in Mehdipatnam / Nizampet, Hyderabad. Book on WhatsApp.">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
